@@ -56,6 +56,20 @@ public class MainMenu extends AppCompatActivity {
                 super.onPageSelected(position);
             }
         });
+//        bottom_nav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//                if (item.getItemId() == R.id.ithome) {
+//                    page_main.setCurrentItem(0);
+//                } else if (item.getItemId() == R.id.itGiohang) {
+//                    page_main.setCurrentItem(1);
+//                } else if (item.getItemId() == R.id.itCaidat) {
+//                    page_main.setCurrentItem(2);
+//                }
+//                return true;
+//            }
+//        });
+        // Trong phần xử lý của setOnNavigationItemSelectedListener trong MainMenu
         bottom_nav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -65,6 +79,21 @@ public class MainMenu extends AppCompatActivity {
                     page_main.setCurrentItem(1);
                 } else if (item.getItemId() == R.id.itCaidat) {
                     page_main.setCurrentItem(2);
+
+                    // Nhận dữ liệu từ Intent
+                    String tenTK = getIntent().getStringExtra("tenTK");
+
+                    // Tạo Bundle để chuyển dữ liệu đến fragment CaidatFragment
+                    Bundle bundle = new Bundle();
+                    bundle.putString("tenTK", tenTK);
+
+                    // Lấy instance của CaidatFragment từ ViewPager2
+                    Fragment caidatFragment = adapterViewPager.createFragment(2);
+
+                    if (caidatFragment instanceof CaidatFragment) {
+                        // Chuyển dữ liệu qua fragment CaidatFragment
+                        caidatFragment.setArguments(bundle);
+                    }
                 }
                 return true;
             }

@@ -112,9 +112,9 @@ public class qlhhActivity extends AppCompatActivity {
                 String nhapsoluong = slhh.getText().toString();
                 String nhapdongia = dghh.getText().toString();
 
-                /*if (validateInput(nhaphh, nhaptenhh, nhapmota, nhapsoluong, nhapdongia)) {
+                if (!validateInput(nhaphh, nhaptenhh, nhapmota, nhapsoluong, nhapdongia)) {
                     return;
-                }*/
+                }
 
                 // Show a confirmation dialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(qlhhActivity.this);

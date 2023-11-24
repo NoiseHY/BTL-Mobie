@@ -108,6 +108,9 @@ public class qltkActivity extends AppCompatActivity {
                 String nhapsdt = sdttk.getText().toString();
                 String nhaphvt = hvttk.getText().toString();
 
+                if (!validateInput(nhaptk, nhapmk, nhaphvt, nhapsdt)) {
+                    return;
+                }
 
                 // Show a confirmation dialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(qltkActivity.this);
@@ -150,6 +153,9 @@ public class qltkActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String nhaptk = tentk.getText().toString();
 
+                if (!ktraMa(nhaptk)) {
+                    return;
+                }
 
                 // Show a confirmation dialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(qltkActivity.this);
@@ -227,7 +233,13 @@ public class qltkActivity extends AppCompatActivity {
         return true;
     }
 
-
+    private  boolean ktraMa(String ma){
+        if (ma.isEmpty()){
+            Toast.makeText(this, "Vui lòng nhập mã tài khoản để xóa", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return  true;
+    }
 
     private boolean isValidPhoneNumber(String phoneNumber) {
         // Xoá khoảng trắng từ số điện thoại

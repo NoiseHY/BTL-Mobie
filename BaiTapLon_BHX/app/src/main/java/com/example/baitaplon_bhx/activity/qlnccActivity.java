@@ -99,6 +99,11 @@ public class qlnccActivity extends AppCompatActivity {
                 String nhaptenncc = tenncc.getText().toString();
                 String nhapdiachi = diachincc.getText().toString();
 
+                // Validate input
+                if (!validateInput(nhapncc, nhaptenncc, nhapdiachi)) {
+                    return;
+                }
+
                 // Show a confirmation dialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(qlnccActivity.this);
                 builder.setTitle("Xác nhận cập nhật");
@@ -137,6 +142,9 @@ public class qlnccActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nhapncc = mancc.getText().toString();
+                if (!ktraMa(nhapncc)) {
+                    return;
+                }
 
                 // Show a confirmation dialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(qlnccActivity.this);
@@ -201,6 +209,14 @@ public class qlnccActivity extends AppCompatActivity {
         }
 
         return true;
+    }
+
+    private boolean ktraMa(String ma){
+        if (ma.isEmpty()) {
+            Toast.makeText(this, "Vui lòng nhập mã nhà cung cấp để xóa thông tin", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return  true;
     }
 
     private void clearInputFields() {

@@ -38,7 +38,9 @@
             android:hint="Tên tài khoản"
             android:textColor="@color/black"
             android:textColorHint="@color/cardview_dark_background"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:focusable="false"
+            android:focusableInTouchMode="false"/>
 
         <EditText
             android:layout_width="match_parent"

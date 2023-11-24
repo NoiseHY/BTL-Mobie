@@ -3,6 +3,7 @@ package com.example.baitaplon_bhx.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -37,6 +38,31 @@ public class DmkActivity extends AppCompatActivity {
             myDatabase.execSQL(sql);
         } catch (Exception e) {
             Log.e("Lỗi", "Không thể tạo bảng: " + e.getMessage());
+        }
+
+
+        //Nhận thông tin
+//        Intent receivedIntent = getIntent();
+//        if (receivedIntent != null) {
+//            String data = receivedIntent.getStringExtra("tenTK");
+//            if (data != null) {
+//                doitentk.setText(data);
+//            } else {
+//                Toast.makeText(this, "Dữ liệu trống", Toast.LENGTH_SHORT).show();
+//            }
+//        } else {
+//            Toast.makeText(this, "Lỗi", Toast.LENGTH_SHORT).show();
+//        }
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null){
+            String data = bundle.getString("tenTK");
+            if (data != null) {
+                doitentk.setText(data);
+            } else {
+                Toast.makeText(this, "Dữ liệu trống", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(this, "Lỗi", Toast.LENGTH_SHORT).show();
         }
 
         btdoi.setOnClickListener(new View.OnClickListener() {

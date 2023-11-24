@@ -98,13 +98,7 @@ public class qlloaihhActivity extends AppCompatActivity {
                 String nhaptenloaihh = tenloaihh.getText().toString();
 
 
-                // Check if it's allowed to update the mahanghoa
-                if (ktraMa(nhaploaihh)) {
-                    Toast.makeText(qlloaihhActivity.this, "Không thể sửa mã hàng hóa", Toast.LENGTH_SHORT).show();
-                    return; // Stop further processing
-                }
-
-                if (validateInput(nhaploaihh, nhaptenloaihh)) {
+                if (!validateInput(nhaploaihh, nhaptenloaihh)) {
                     Toast.makeText(qlloaihhActivity.this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
                     return;
                 }

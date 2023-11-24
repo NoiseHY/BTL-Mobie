@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.baitaplon_bhx.R;
+import com.example.baitaplon_bhx.fragment.CaidatFragment;
 
 public class MainActivity extends AppCompatActivity {
     private EditText tendangnhap, matkhau;
@@ -39,7 +40,13 @@ public class MainActivity extends AppCompatActivity {
                 if (tendangnhap.getText().toString().equals("admin") && matkhau.getText().toString().equals("123456")) {
                     Toast.makeText(MainActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, MainMenu.class);
+                    intent.putExtra("tenTK", tendk_dtb);
                     startActivity(intent);
+                    //Gửi dữ liệu
+//                    Intent intent2 = new Intent(MainActivity.this, MainMenu.class);
+////                    String dtSend = "admin";
+//                    intent2.putExtra("tenTK", tendk_dtb);
+//                    startActivity(intent2);
 
                 } else {
                     // Kiểm tra đăng nhập từ cơ sở dữ liệu
@@ -47,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
                         // Add code để chuyển đến màn hình chính hoặc làm gì đó khác tùy thuộc vào ứng dụng của bạn
                         Intent intent = new Intent(MainActivity.this, MainMenu.class);
+                        intent.putExtra("tenTK", tendk_dtb);
                         startActivity(intent);
                     } else {
                         Toast.makeText(MainActivity.this, "Tài khoản hoặc mật khẩu sai!", Toast.LENGTH_SHORT).show();

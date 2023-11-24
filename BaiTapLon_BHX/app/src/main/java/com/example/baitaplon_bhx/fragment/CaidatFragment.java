@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.baitaplon_bhx.activity.DmkActivity;
 import com.example.baitaplon_bhx.activity.HTActivity;
@@ -86,6 +87,22 @@ public class CaidatFragment extends Fragment {
             }
         });
 
+        // Kiểm tra dữ liệu từ Intent
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            String userType = bundle.getString("tenTK");
+
+            // Kiểm tra nếu userType là "admin", ẩn button đổi mật khẩu
+            if ("admin".equals(userType)) {
+
+                btAdmin.setVisibility(View.VISIBLE); // Hiển thị button đổi mật khẩu
+            } else {
+
+
+                btAdmin.setVisibility(View.GONE); // Ẩn button đổi mật khẩu
+            }
+        }
+
         btDmk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,8 +134,22 @@ public class CaidatFragment extends Fragment {
 
     public void openDmk() {
         // Create an intent to start the NewActivity
-        Intent intent = new Intent(getActivity(), DmkActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(getActivity(), DmkActivity.class);
+//        startActivity(intent);
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            String data = bundle.getString("tenTK");
+
+            // Chuyển dữ liệu đến Activity
+            Intent intent = new Intent(getActivity(), DmkActivity.class);
+
+            // Đưa dữ liệu vào Intent
+            intent.putExtra("tenTK", data);
+
+            // Chạy Activity
+            startActivity(intent);
+        }
+
     }
 
     public void openHT(){
