@@ -8,13 +8,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.baitaplon_bhx.R;
 import com.example.baitaplon_bhx.activity.chitietbia;
 import com.example.baitaplon_bhx.activity.chitietbuoidaxanh;
 import com.example.baitaplon_bhx.activity.chitietraumuc;
 import com.example.baitaplon_bhx.activity.chitietspActivity;
+import com.example.baitaplon_bhx.activity.timkiemsanpham;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -72,12 +76,14 @@ public class TrangchuFragment extends Fragment {
         ImageView imgbia = view.findViewById(R.id.pic111);
         ImageView imgdua = view.findViewById(R.id.pic101);
         ImageView imgmuc = view.findViewById(R.id.pic100);
+        ImageView imgtk = view.findViewById(R.id.imgtk);
 
+        EditText tksp = view.findViewById(R.id.edtTKSPTC);
         // Đặt sự kiện OnClickListener cho ImageView
         imageTao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Mở YourNewActivity khi ảnh được click
+                // Mở NewActivity khi ảnh được click
                 Intent intent = new Intent(getActivity(), chitietspActivity.class);
                 startActivity(intent);
             }
@@ -86,7 +92,7 @@ public class TrangchuFragment extends Fragment {
         imgbia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Mở YourNewActivity khi ảnh được click
+                // Mở NewActivity khi ảnh được click
                 Intent intent = new Intent(getActivity(), chitietbia.class);
                 startActivity(intent);
             }
@@ -94,7 +100,7 @@ public class TrangchuFragment extends Fragment {
         imgdua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Mở YourNewActivity khi ảnh được click
+                // Mở Activity khi ảnh được click
                 Intent intent = new Intent(getActivity(), chitietbuoidaxanh.class);
                 startActivity(intent);
             }
@@ -105,6 +111,23 @@ public class TrangchuFragment extends Fragment {
                 // Mở YourNewActivity khi ảnh được click
                 Intent intent = new Intent(getActivity(), chitietraumuc.class);
                 startActivity(intent);
+            }
+        });
+
+        imgtk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (tksp != null) {
+                    String data = tksp.getText().toString();
+                    // Mở timkiemsanpham Activity khi ảnh được click
+                    Intent intent = new Intent(getActivity(), timkiemsanpham.class);
+                    intent.putExtra("tensp", data);
+                    // Khởi chạy hoạt động mới
+                    startActivity(intent);
+                } else {
+                    // Xử lý khi tksp không được ánh xạ thành công
+                    Toast.makeText(getActivity(), "Không thể lấy dữ liệu", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

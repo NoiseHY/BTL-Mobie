@@ -90,6 +90,18 @@
                 app:cornerRadius="20dp" />
 
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btTKHH"
+                style="@android:style/Widget.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/green_banner"
+                android:text="Tìm kiếm"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

@@ -16,6 +16,7 @@ import com.example.baitaplon_bhx.activity.HTActivity;
 import com.example.baitaplon_bhx.R;
 import com.example.baitaplon_bhx.activity.MainActivity;
 import com.example.baitaplon_bhx.activity.QuanlyActivity;
+import com.example.baitaplon_bhx.activity.timkiemsanpham;
 
 import androidx.fragment.app.FragmentTransaction;
 /**
@@ -78,7 +79,7 @@ public class CaidatFragment extends Fragment {
         Button btDmk = view.findViewById(R.id.btDMk);
         Button bthotro = view.findViewById(R.id.btHT);
         Button btDangxuat = view.findViewById(R.id.btDX);
-
+        Button bttkhh = view.findViewById(R.id.btTKHH);
 
         btAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,7 +124,14 @@ public class CaidatFragment extends Fragment {
                 exit();
             }
         });
+        bttkhh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tkhh();
+            }
+        });
         return view;
+
     }
 
     public void openNewActivity() {
@@ -154,6 +162,10 @@ public class CaidatFragment extends Fragment {
 
     public void openHT(){
         Intent intent = new Intent(getActivity(), HTActivity.class);
+        startActivity(intent);
+    }
+    public void tkhh(){
+        Intent intent = new Intent(getActivity(), timkiemsanpham.class);
         startActivity(intent);
     }
     public void exit(){
