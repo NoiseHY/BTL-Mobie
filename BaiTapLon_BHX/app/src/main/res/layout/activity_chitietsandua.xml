@@ -117,7 +117,7 @@
                     android:id="@+id/imageView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:srcCompat="@drawable/star" />
+                    app:srcCompat="@drawable/star" />
 
                 <TextView
                     android:id="@+id/rateTxt"
@@ -141,7 +141,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    tools:srcCompat="@drawable/review" />
+                    app:srcCompat="@drawable/review" />
 
                 <TextView
                     android:id="@+id/reviewTxt"

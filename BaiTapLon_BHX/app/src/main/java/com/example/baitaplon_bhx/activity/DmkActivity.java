@@ -1,8 +1,10 @@
 package com.example.baitaplon_bhx.activity;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -76,26 +78,47 @@ public class DmkActivity extends AppCompatActivity {
                 if (validateInput(tentk, mktkCu, xacnhanmk, nhapmkmoi)) {
                     // Kiểm tra mật khẩu cũ trước khi đổi mật khẩu
                     if (performLogin(tentk, mktkCu)) {
-                        ContentValues myvalue = new ContentValues();
-                        myvalue.put("mk", xacnhanmk);
+                        // Tạo AlertDialog.Builder
+                        AlertDialog.Builder builder = new AlertDialog.Builder(DmkActivity.this);
+                        builder.setTitle("Xác nhận đổi mật khẩu");
+                        builder.setMessage("Bạn có chắc chắn muốn đổi mật khẩu?");
+                        builder.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                ContentValues myvalue = new ContentValues();
+                                myvalue.put("mk", xacnhanmk);
 
-                        // Update mật khẩu trong cơ sở dữ liệu
-                        int rowsAffected = myDatabase.update("taikhoan", myvalue, "tentk=?", new String[]{tentk});
+                                // Update mật khẩu trong cơ sở dữ liệu
+                                int rowsAffected = myDatabase.update("taikhoan", myvalue, "tentk=?", new String[]{tentk});
 
-                        String msg;
-                        if (rowsAffected > 0) {
-                            msg = "Đổi mật khẩu thành công!";
-                        } else {
-                            msg = "Đổi mật khẩu thất bại. Kiểm tra lại mật khẩu cũ.";
-                        }
+                                String msg;
+                                if (rowsAffected > 0) {
+                                    msg = "Đổi mật khẩu thành công!";
+                                } else {
+                                    msg = "Đổi mật khẩu thất bại. Kiểm tra lại mật khẩu cũ.";
+                                }
 
-                        Toast.makeText(DmkActivity.this, msg, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(DmkActivity.this, msg, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                        builder.setNegativeButton("Hủy bỏ", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Đóng dialog nếu người dùng chọn hủy bỏ
+                                dialog.dismiss();
+                            }
+                        });
+
+                        // Hiển thị AlertDialog
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
                     } else {
                         Toast.makeText(DmkActivity.this, "Mật khẩu cũ không đúng", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
+
     }
 
     private boolean validateInput(String id, String mkCu, String mkMoi, String nhapLaiMkMoi) {

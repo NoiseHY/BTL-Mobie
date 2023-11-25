@@ -462,7 +462,7 @@
                         app:layout_constraintBottom_toBottomOf="@+id/feeTxt"
                         app:layout_constraintEnd_toEndOf="@+id/view4"
                         app:layout_constraintTop_toTopOf="@+id/feeTxt"
-                        tools:srcCompat="@drawable/review" />
+                        app:srcCompat="@drawable/review" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -561,7 +561,7 @@
                         app:layout_constraintBottom_toBottomOf="@+id/feeTxt111"
                         app:layout_constraintEnd_toEndOf="@+id/view111"
                         app:layout_constraintTop_toTopOf="@+id/feeTxt111"
-                        tools:srcCompat="@drawable/review" />
+                        app:srcCompat="@drawable/review" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
 
