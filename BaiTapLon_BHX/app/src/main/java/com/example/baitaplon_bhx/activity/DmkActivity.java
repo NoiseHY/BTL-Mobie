@@ -128,16 +128,11 @@ public class DmkActivity extends AppCompatActivity {
             return false;
         }
 
-
-
-
         // Kiểm tra mật khẩu mới
         if (!mkMoi.equals(nhapLaiMkMoi)) {
             Toast.makeText(this, "Mật khẩu mới không khớp với nhập lại mật khẩu mới", Toast.LENGTH_SHORT).show();
             return false;
         }
-
-
 
         return true;
     }

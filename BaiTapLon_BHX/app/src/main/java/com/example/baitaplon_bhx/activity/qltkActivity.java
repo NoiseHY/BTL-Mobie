@@ -250,12 +250,11 @@ public class qltkActivity extends AppCompatActivity {
             return false;
         }
 
-        // Kiểm tra độ dài của số điện thoại (ví dụ: có 10 chữ số)
+        // Kiểm tra độ dài của số điện thoại
         if (phoneNumber.length() != 10) {
             return false;
         }
 
-        // Các điều kiện kiểm tra khác có thể được thêm vào tại đây dựa trên yêu cầu thực tế
 
         return true;
     }

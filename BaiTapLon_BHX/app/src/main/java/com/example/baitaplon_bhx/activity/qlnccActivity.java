@@ -60,7 +60,7 @@ public class qlnccActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String nhapncc = mancc.getText().toString();
                 String nhaptenncc = tenncc.getText().toString();
-                // Assuming you have additional input fields for "diachi"
+
                 String nhapdiachi = diachincc.getText().toString();
 
                 ContentValues myvalue = new ContentValues();
@@ -99,7 +99,7 @@ public class qlnccActivity extends AppCompatActivity {
                 String nhaptenncc = tenncc.getText().toString();
                 String nhapdiachi = diachincc.getText().toString();
 
-                // Validate input
+
                 if (!validateInput(nhapncc, nhaptenncc, nhapdiachi)) {
                     return;
                 }
@@ -111,7 +111,7 @@ public class qlnccActivity extends AppCompatActivity {
                 builder.setPositiveButton("Cập nhật", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // User confirmed update
+
                         ContentValues values = new ContentValues();
                         values.put("tennhacungcap", nhaptenncc);
                         values.put("diachi", nhapdiachi);
@@ -128,7 +128,7 @@ public class qlnccActivity extends AppCompatActivity {
                 builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // User canceled update
+
                         dialog.dismiss();
                     }
                 });
@@ -153,7 +153,7 @@ public class qlnccActivity extends AppCompatActivity {
                 builder.setPositiveButton("Xóa", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // User confirmed deletion
+
                         int rowsAffected = myDatabase.delete("nhacungcap", "manhacungcap=?", new String[]{nhapncc});
                         if (rowsAffected > 0) {
                             Toast.makeText(qlnccActivity.this, "Xóa nhà cung cấp thành công!", Toast.LENGTH_SHORT).show();
@@ -167,7 +167,7 @@ public class qlnccActivity extends AppCompatActivity {
                 builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // User canceled deletion
+
                         dialog.dismiss();
                     }
                 });

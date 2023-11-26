@@ -74,9 +74,30 @@ public class dangkiActivity extends AppCompatActivity {
             Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
             return false;
         }
+        // Kiểm tra định dạng số điện thoại
+        if (!isValidPhoneNumber(sdt)) {
+            Toast.makeText(this, "Số điện thoại không hợp lệ", Toast.LENGTH_SHORT).show();
+            return false;
+        }
         return true;
     }
+    private boolean isValidPhoneNumber(String phoneNumber) {
+        // Xoá khoảng trắng từ số điện thoại
+        phoneNumber = phoneNumber.replaceAll("\\s", "");
 
+        // Kiểm tra xem số điện thoại có chứa toàn bộ là chữ số không
+        if (!phoneNumber.matches("\\d+")) {
+            return false;
+        }
+
+        // Kiểm tra độ dài của số điện thoại (ví dụ: có 10 chữ số)
+        if (phoneNumber.length() != 10) {
+            return false;
+        }
+
+
+        return true;
+    }
     private void clearInputFields() {
         tendk.setText("");
         mkdk.setText("");

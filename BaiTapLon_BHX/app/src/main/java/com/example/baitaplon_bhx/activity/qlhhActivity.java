@@ -229,15 +229,13 @@ public class qlhhActivity extends AppCompatActivity {
             return false;
         }
 
-        // Additional validation for numeric fields (soLuong and donGia)
         try {
             int intSoLuong = Integer.parseInt(soLuong);
             float floatDonGia = Float.parseFloat(donGia);
 
-            // You can add further validation rules for these numeric fields if needed
 
         } catch (NumberFormatException e) {
-            // Handle the case where parsing to integer or float fails
+
             Toast.makeText(this, "Số lượng và đơn giá phải là số", Toast.LENGTH_SHORT).show();
             return false;
         }

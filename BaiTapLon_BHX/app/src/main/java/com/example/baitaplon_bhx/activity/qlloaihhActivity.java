@@ -40,7 +40,7 @@ public class qlloaihhActivity extends AppCompatActivity {
         btthemloaihh = findViewById(R.id.btthemloaihh);
         btxoaloaihh = findViewById(R.id.btxoaloaihh);
 
-        lv = findViewById(R.id.lvloaihh); // Replace with your actual ListView ID
+        lv = findViewById(R.id.lvloaihh);
         myList = new ArrayList<>();
         myAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, myList);
         lv.setAdapter(myAdapter);
@@ -66,7 +66,7 @@ public class qlloaihhActivity extends AppCompatActivity {
 
                 if (ktraMa(nhaploaihh)) {
                     Toast.makeText(qlloaihhActivity.this, "Mã hàng hóa đã tồn tại!", Toast.LENGTH_SHORT).show();
-                    return; // Stop further processing
+                    return;
                 }
                 if(!validateInput(nhaploaihh, nhaptenloaihh)){
                     return;
@@ -110,7 +110,6 @@ public class qlloaihhActivity extends AppCompatActivity {
                 builder.setPositiveButton("Cập nhật", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // User confirmed update
                         ContentValues values = new ContentValues();
                         values.put("tenhanghoa", nhaptenloaihh);
 
@@ -126,7 +125,6 @@ public class qlloaihhActivity extends AppCompatActivity {
                 builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // User canceled update
                         dialog.dismiss();
                     }
                 });
@@ -164,7 +162,6 @@ public class qlloaihhActivity extends AppCompatActivity {
                 builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // User canceled deletion
                         dialog.dismiss();
                     }
                 });
