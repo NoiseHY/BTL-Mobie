@@ -57,7 +57,7 @@
             android:layout_height="50dp"
             android:id="@+id/motahh"
             android:background="@drawable/custom_edittext"
-            android:drawableLeft="@drawable/padlock"
+            android:drawableLeft="@drawable/baseline_info_24"
             android:drawablePadding="8dp"
             android:padding="8dp"
             android:hint="Mô tả "
@@ -70,7 +70,7 @@
             android:layout_height="50dp"
             android:id="@+id/slhh"
             android:background="@drawable/custom_edittext"
-            android:drawableLeft="@drawable/baseline_face_retouching_natural_24"
+            android:drawableLeft="@drawable/baseline_18_up_rating_24"
             android:drawablePadding="8dp"
             android:padding="8dp"
             android:hint="Số lượng"
@@ -83,7 +83,7 @@
             android:layout_height="50dp"
             android:id="@+id/dghh"
             android:background="@drawable/custom_edittext"
-            android:drawableLeft="@drawable/call"
+            android:drawableLeft="@drawable/baseline_18_up_rating_24"
             android:drawablePadding="8dp"
             android:padding="8dp"
             android:hint="Đơn giá"
@@ -106,6 +106,7 @@
                 android:id="@+id/btthemhh"
                 android:layout_gravity="center_horizontal"
                 android:text="Thêm "
+                android:drawableTint="@color/white"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/green"
@@ -122,6 +123,7 @@
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/green"
                 app:cornerRadius="20dp"
+                android:drawableTint="@color/white"
                 android:drawableLeft="@drawable/baseline_edit_note_24"/>
 
             <Button
@@ -134,6 +136,7 @@
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/green"
                 app:cornerRadius="20dp"
+                android:drawableTint="@color/white"
                 android:drawableLeft="@drawable/baseline_folder_delete_24"/>
 
             <Button
@@ -146,6 +149,7 @@
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/green"
                 app:cornerRadius="20dp"
+                android:drawableTint="@color/white"
                 android:drawableLeft="@drawable/baseline_refresh_24"/>
 
         </GridLayout>

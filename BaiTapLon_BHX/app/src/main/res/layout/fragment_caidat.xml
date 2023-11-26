@@ -48,7 +48,10 @@
                 android:text="Đổi mật khẩu"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                app:cornerRadius="20dp" />
+                app:cornerRadius="20dp"
+                android:paddingLeft="30dp"
+                android:drawableTint="@color/white"
+                android:drawableLeft="@drawable/baseline_change_circle_24"/>
 
 
             <androidx.appcompat.widget.AppCompatButton
@@ -61,7 +64,10 @@
                 android:text="Hỗ trợ"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                app:cornerRadius="20dp" />
+                app:cornerRadius="20dp"
+                android:drawableLeft="@drawable/baseline_info_24"
+                android:drawableTint="@color/white"
+                android:paddingLeft="30dp"/>
 
 
             <androidx.appcompat.widget.AppCompatButton
@@ -74,7 +80,10 @@
                 android:text="Đăng xuất"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                app:cornerRadius="20dp" />
+                app:cornerRadius="20dp"
+                android:drawableLeft="@drawable/login_button"
+                android:drawableTint="@color/white"
+                android:paddingLeft="30dp"/>
 
 
             <androidx.appcompat.widget.AppCompatButton
@@ -87,7 +96,11 @@
                 android:text="ADMIN"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                app:cornerRadius="20dp" />
+                app:cornerRadius="20dp"
+                android:drawableLeft="@drawable/baseline_person_pin_24"
+                android:drawableTint="@color/white"
+                android:paddingLeft="30dp"
+                />
 
 
             <androidx.appcompat.widget.AppCompatButton
@@ -100,7 +113,10 @@
                 android:text="Tìm kiếm"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                app:cornerRadius="20dp" />
+                app:cornerRadius="20dp"
+                android:drawableLeft="@drawable/search"
+                android:drawableTint="@color/white"
+                android:paddingLeft="30dp"/>
 
         </LinearLayout>
 
